@@ -107,6 +107,34 @@ PRODUCT_PACKAGES += \
     android.hardware.graphics.composer@2.2-service \
     android.hardware.graphics.mapper@2.0-impl
 
+#####################
+### Ubuntu Touch
+#####################
+# Aethercast
+PRODUCT_PROPERTY_OVERRIDES += \
+    ubuntu.widi.supported=1
+
+PRODUCT_PACKAGES += \
+    libubuntu_application_api \
+    libcameraservice \
+    libdroidmedia \
+    libcamera_compat_layer \
+    libmedia_compat_layer \
+    libui_compat_layer \
+    libsf_compat_layer \
+    minimediaservice \
+    minisfservice \
+    libminisf \
+    libaudioflingerglue \
+    miniafservice
+
+# telepathy-ofono quirks
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.t-o.quirk.forcesink=sink.primary_output \
+    ro.t-o.quirk.forcesource=source.primary_input
+    ril.device=ril
+
+
 # Health
 PRODUCT_PACKAGES += \
     android.hardware.health@2.0-impl \
